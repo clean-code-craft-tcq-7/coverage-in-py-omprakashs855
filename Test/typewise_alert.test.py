@@ -5,13 +5,13 @@ import subprocess
 
 sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir))
 import src.typewise_alert as typewise_alert 
+from src.typewise_alert import TypeWise_Alert as TWA
 
 
 class TypewiseTest(unittest.TestCase):
 
   def test_check_and_alert(self):
-    root_dir = subprocess.Popen(['git', 'rev-parse', '--show-toplevel'],
-                                stdout=subprocess.PIPE).communicate()[0].rstrip().decode('utf-8')
+    root_dir = TWA().get_root_dir()
     with open(os.path.join(root_dir, "inc", "test_case.json"), "r") as jsonread:
       json_data = json.load(jsonread)
     
