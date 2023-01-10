@@ -34,7 +34,6 @@ class TypeWise_Alert:
       sys.exit(1)
 
 def infer_breach(value, lowerLimit, upperLimit):
-  print(value, lowerLimit, upperLimit)
   if value < lowerLimit:
     return 'TOO_LOW'
   if value > upperLimit:
@@ -42,7 +41,7 @@ def infer_breach(value, lowerLimit, upperLimit):
   return 'NORMAL'
 
 
-def classify_temperature_breach(coolingType, temperatureInC, limit_data):
+def classify_temperature_breach(temperatureInC, limit_data):
   return infer_breach(temperatureInC, limit_data['lowerLimit'], limit_data['upperLimit'])
 
 def batteryChar_cooling_dict(batteryChar, data_list):
@@ -80,12 +79,11 @@ def check_and_alert(alertTarget, batteryChar, temperatureInC):
 
   # Checking If batteryChar is exceptable
   alert_obj.character_check(alert_obj.coolingType, batteryChar)
-  breachType = classify_temperature_breach(batteryChar, temperatureInC, 
-                          batteryChar_cooling_dict(batteryChar, cooling_stage_json_data["Cooling_Stage"]))
+  limit_json_data = batteryChar_cooling_dict(batteryChar, cooling_stage_json_data["Cooling_Stage"])
+  breachType = classify_temperature_breach(temperatureInC, limit_json_data)
 
   # Checking If alertTarget is exceptable
   alert_obj.character_check(alert_obj.alertTarget_type, alertTarget)
   alert_target_selection(breachType, alertTarget)
   
-  print(breachType)
   return breachType

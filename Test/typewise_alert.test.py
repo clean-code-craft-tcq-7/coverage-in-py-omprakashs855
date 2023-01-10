@@ -18,7 +18,7 @@ class TypewiseTest(unittest.TestCase):
     for dt in json_data["check_and_alert"]:
       self.assertTrue(typewise_alert.check_and_alert(dt["alertTarget"], 
                                                      dt["batteryChar"], 
-                                                     dt["temperatureInC"] == dt["Result"]))
+                                                     dt["temperatureInC"]) == dt["Result"])
 
 
 
