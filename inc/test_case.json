@@ -1,0 +1,11 @@
+{
+    "check_and_alert":
+    [
+        {
+            "alertTarget": "TO_CONTROLLER",
+            "batteryChar": "PASSIVE_COOLING",
+            "temperatureInC": "40",
+            "Result": "TOO_LOW"
+        }
+    ]
+}
