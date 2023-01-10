@@ -1,0 +1,65 @@
+{
+    "check_and_alert":
+    [
+        {
+            "alertTarget": "TO_CONTROLLER",
+            "batteryChar": "PASSIVE_COOLING",
+            "temperatureInC": 40,
+            "Result": "TOO_HIGH"
+        },
+        {
+            "alertTarget": "TO_EMAIL",
+            "batteryChar": "HI_ACTIVE_COOLING",
+            "temperatureInC": -1,
+            "Result": "TOO_LOW"
+        },
+        {
+            "alertTarget": "TO_CONTROLLER",
+            "batteryChar": "MED_ACTIVE_COOLING",
+            "temperatureInC": 0,
+            "Result": "NORMAL"
+        },
+        {
+            "alertTarget": "TO_EMAIL",
+            "batteryChar": "PASSIVE_COOLING",
+            "temperatureInC": 0,
+            "Result": "NORMAL"
+        },
+        {
+            "alertTarget": "TO_CONTROLLER",
+            "batteryChar": "HI_ACTIVE_COOLING",
+            "temperatureInC": 0,
+            "Result": "NORMAL"
+        },
+        {
+            "alertTarget": "TO_EMAIL",
+            "batteryChar": "PASSIVE_COOLING",
+            "temperatureInC": 35,
+            "Result": "NORMAL"
+        },
+        {
+            "alertTarget": "TO_CONTROLLER",
+            "batteryChar": "HI_ACTIVE_COOLING",
+            "temperatureInC": 45,
+            "Result": "NORMAL"
+        },
+        {
+            "alertTarget": "TO_EMAIL",
+            "batteryChar": "MED_ACTIVE_COOLING",
+            "temperatureInC": 40,
+            "Result": "NORMAL"
+        },
+        {
+            "alertTarget": "TO_CONTROLLER",
+            "batteryChar": "HI_ACTIVE_COOLING",
+            "temperatureInC": 50,
+            "Result": "TOO_HIGH"
+        },
+        {
+            "alertTarget": "TO_EMAIL",
+            "batteryChar": "MED_ACTIVE_COOLING",
+            "temperatureInC": 45,
+            "Result": "TOO_HIGH"
+        }
+    ]
+}
